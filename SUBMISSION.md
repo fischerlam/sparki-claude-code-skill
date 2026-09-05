@@ -1,0 +1,101 @@
+# Claude Code 官方目录提交材料
+
+> 用途：照此填写 **claude.ai 提交表单**（Team/Enterprise 组织路径，适合新加坡公司主体）。
+> 表单入口：**https://claude.ai/admin-settings/directory/submissions/plugins/new**
+> 前提：用**新加坡公司**的组织账号登录，且该账号有 **directory 管理权限**（组织 Owner 默认有）。
+> 备用（个人身份）：https://platform.claude.com/plugins/submit
+
+---
+
+## 提交前状态确认（已全部就绪 ✅）
+
+- 仓库：**https://github.com/fischerlam/sparki-claude-code-skill**（PUBLIC）
+- 分支：`main` · 最新 commit：`410d3f7c6af035211a4b3c5f500d22d5089c9d47`
+- `claude plugin validate --strict` → ✔ 通过（审核流水线跑的是同一个校验）
+- plugin.json version `1.1.0`，与 SKILL.md 一致（版本不一致是最常见的拒绝原因，已避开）
+
+> ⚠️ 提交前若又推了新 commit，审核会 pin 到最新 SHA；确保推之后再校验一次。
+
+---
+
+## 表单逐栏填写建议
+
+### 1. Repository URL
+```
+https://github.com/fischerlam/sparki-claude-code-skill
+```
+> 提交的是仓库地址，不是某个子目录。审核会自动读取其中的 `.claude-plugin/plugin.json`。
+
+### 2. Plugin name
+```
+sparki-video-editor
+```
+> 与 plugin.json 的 `name` 一致。用户调用时是 `/sparki-video-editor:...`。
+
+### 3. Short description（一句话，列表页展示）
+```
+AI video editor — turn raw footage into vlogs, highlight reels, and social clips (TikTok/Shorts/Reels) by just describing the edit. Cloud-rendered, no ffmpeg.
+```
+
+### 4. Category（选最贴近的）
+建议：**Creative / Media / Content**（表单给什么选项就挑最接近的创意/媒体类）
+
+### 5. Long description（详情页，可用下面这段）
+```
+Sparki turns raw footage into polished, ready-to-post video without any editing
+experience. Point Claude at a local video and describe what you want — "make a
+vertical travel vlog with captions" — and Sparki uploads it, edits it in the
+cloud, and saves the finished file to your working directory.
+
+Three ways to edit:
+• Style-guided — pick a preset (vlog, highlight reel, AI captions, and more)
+• Prompt-driven — describe the edit in plain language
+• Style-clone — replicate a reference video's editing style
+
+All rendering runs on the cloud-hosted Sparki API — no ffmpeg, no local
+rendering. Requires a free API key from https://sparki.io/doc/api.
+```
+
+### 6. Example prompts（表单常会要 starter prompts）
+```
+- Edit ./raw/trip.mp4 into a vertical travel highlight reel with captions
+- Turn these clips into a 60-second TikTok montage with energetic pacing
+- Add AI captions to ./interview.mp4 and translate them to English
+```
+
+### 7. Setup / prerequisites（如有此栏）
+```
+1. Install the engine: uv tool install --upgrade sparki-cli  (requires uv)
+2. Get an API key at https://sparki.io/doc/api and run: sparki setup --api-key <KEY>
+   (or export SPARKI_API_KEY)
+3. Run `sparki doctor` to confirm setup.
+```
+
+### 8. Author / Publisher identity
+- 用**新加坡公司主体**填写（表单会要求企业实名/业务验证 —— business verification）
+- Author 显示名建议：`Sparki` 或公司注册名
+- Homepage：`https://sparki.io`
+- Support：`support@sparki.io`
+
+### 9. License
+```
+MIT-0
+```
+
+---
+
+## 提交后会发生什么
+
+1. 审核流水线跑 `claude plugin validate` + 自动安全扫描（恶意代码 / 凭证窃取模式等）。
+2. 通过后 pin 到当前 commit SHA，进入 `anthropics/claude-plugins-community` 目录。
+3. 公开目录**每晚同步**，审核通过到实际可见有延迟。
+4. 想确认是否已上架：在下面这个 catalog 里搜 `sparki-video-editor`
+   https://github.com/anthropics/claude-plugins-community/blob/main/.claude-plugin/marketplace.json
+
+> 注：`claude-plugins-official`（官方精选）是 Anthropic 自行决定收录的，**没有申请入口**，这个表单只进 community 目录。
+
+---
+
+## 身份验证提示（新加坡公司主体）
+
+表单提交前需完成 **business verification**（企业身份验证），审核方会核对提交材料与发布主体一致。准备好公司注册信息即可。这一步只能你本人在登录态下完成。
