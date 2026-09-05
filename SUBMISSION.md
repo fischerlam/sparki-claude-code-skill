@@ -1,9 +1,9 @@
 # Claude Code 官方目录提交材料
 
-> 用途：照此填写 **claude.ai 提交表单**（Team/Enterprise 组织路径，适合新加坡公司主体）。
-> 表单入口：**https://claude.ai/admin-settings/directory/submissions/plugins/new**
-> 前提：用**新加坡公司**的组织账号登录，且该账号有 **directory 管理权限**（组织 Owner 默认有）。
-> 备用（个人身份）：https://platform.claude.com/plugins/submit
+> 用途：照此填写 **Console 提交表单**（个人作者路径，无需公司主体）。
+> 表单入口：**https://platform.claude.com/plugins/submit**
+> 前提：用你的个人 Claude 账号登录即可，无需 Team/Enterprise 组织。
+> 备用（有公司组织时）：https://claude.ai/admin-settings/directory/submissions/plugins/new
 
 ---
 
@@ -72,8 +72,8 @@ rendering. Requires a free API key from https://sparki.io/doc/api.
 ```
 
 ### 8. Author / Publisher identity
-- 用**新加坡公司主体**填写（表单会要求企业实名/业务验证 —— business verification）
-- Author 显示名建议：`Sparki` 或公司注册名
+- 以**个人作者**身份填写（表单会要求 **individual verification** 个人实名，不需要公司注册信息）
+- Author 显示名建议：你本人的名字，或 `Sparki`
 - Homepage：`https://sparki.io`
 - Support：`support@sparki.io`
 
@@ -96,6 +96,6 @@ MIT-0
 
 ---
 
-## 身份验证提示（新加坡公司主体）
+## 身份验证提示（个人作者）
 
-表单提交前需完成 **business verification**（企业身份验证），审核方会核对提交材料与发布主体一致。准备好公司注册信息即可。这一步只能你本人在登录态下完成。
+表单提交前需完成 **individual verification**（个人身份验证），审核方会核对提交材料与发布者一致。准备好个人身份信息即可。这一步只能你本人在登录态下完成。
